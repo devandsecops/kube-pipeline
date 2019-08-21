@@ -22,7 +22,7 @@ volumes: [
         container('gradle') {
           sh """
             pwd
-            gradle test
+            gradle test --stacktrace --debug
             """
         }
         }
