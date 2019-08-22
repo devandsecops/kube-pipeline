@@ -5,7 +5,7 @@ podTemplate(label: label, containers: [
 ],
 volumes: [
   hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')
-])
+]) {
 node {
     checkout scm
     /*
@@ -18,4 +18,5 @@ node {
         /* Run some tests which require MySQL */
         sh 'make check'
     }
+}
 }
